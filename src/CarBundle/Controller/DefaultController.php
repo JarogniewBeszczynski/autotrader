@@ -11,12 +11,9 @@ class DefaultController extends Controller
      * @Route("/car", name="offer")
      */
     public function indexAction()
-    {
-        $cars = [
-            ['make' => 'BMW', 'name' => 'x1'],
-            ['make' => 'Fiat', 'name' => 'Croma'],
-            ['make' => 'Audi', 'name' => 'Q7'],
-        ];
+    {   $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
+        $cars = $carRepository->findAll();
+
         return $this->render('CarBundle:Default:index.html.twig', ['cars' => $cars]);
     }
 }

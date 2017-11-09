@@ -4,4 +4,20 @@
 {% endblock %}
 {% block body %}
 <h1>Our offer</h1>
+    <table class="table">
+        <tr>
+            <th>make</th>
+            <th>name</th>
+        </tr>
+        {% for car in cars %}
+            <tr>
+            <td>
+                {{ car.make }}
+            </td>
+            <td>
+                {{ car.name }}
+            </td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
